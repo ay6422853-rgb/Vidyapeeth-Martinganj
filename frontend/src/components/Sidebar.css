@@ -4,14 +4,19 @@
 
 .sidebar {
   position: fixed;
+
   top: 0;
   left: 0;
+
   width: 260px;
   height: 100vh;
+
   z-index: 1000;
 
   display: flex;
   flex-direction: column;
+
+  box-sizing: border-box;
 
   background: #111827;
   color: #ffffff;
@@ -21,17 +26,18 @@
   transition: transform 0.28s ease;
 }
 
-
 /* =========================================================
    BRAND
 ========================================================= */
 
 .sidebar-brand {
   min-height: 76px;
+
   padding: 0 20px;
 
   display: flex;
   align-items: center;
+
   gap: 12px;
 
   border-bottom: 1px solid #1f2937;
@@ -67,6 +73,7 @@
 
   font-size: 18px;
   font-weight: 700;
+
   line-height: 1.2;
 }
 
@@ -81,13 +88,13 @@
   font-weight: 500;
 }
 
-
 /* =========================================================
    ROLE
 ========================================================= */
 
 .sidebar-role {
   margin: 18px 16px 10px;
+
   padding: 9px 12px;
 
   display: flex;
@@ -100,6 +107,7 @@
 
   font-size: 11px;
   font-weight: 700;
+
   letter-spacing: 0.6px;
 }
 
@@ -116,7 +124,6 @@
   background: #22c55e;
 }
 
-
 /* =========================================================
    NAVIGATION
 ========================================================= */
@@ -132,9 +139,6 @@
   scrollbar-color: #374151 transparent;
 }
 
-
-/* Chrome / Edge scrollbar */
-
 .sidebar-nav::-webkit-scrollbar {
   width: 5px;
 }
@@ -148,24 +152,28 @@
   border-radius: 10px;
 }
 
-
 /* =========================================================
-   SIDEBAR LINKS
+   LINKS
 ========================================================= */
 
 .sidebar-link {
   min-height: 43px;
 
   margin-bottom: 3px;
+
   padding: 0 12px;
 
   display: flex;
   align-items: center;
+
   gap: 12px;
+
+  box-sizing: border-box;
 
   border-radius: 8px;
 
   color: #cbd5e1;
+
   text-decoration: none;
 
   font-size: 13px;
@@ -190,9 +198,9 @@
 
   font-weight: 600;
 
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.18);
+  box-shadow:
+    0 4px 12px rgba(37, 99, 235, 0.18);
 }
-
 
 /* =========================================================
    ICON
@@ -210,12 +218,12 @@
   text-align: center;
 
   font-size: 16px;
+
   line-height: 1;
 }
 
-
 /* =========================================================
-   SIDEBAR BOTTOM
+   BOTTOM
 ========================================================= */
 
 .sidebar-bottom {
@@ -225,7 +233,6 @@
 
   background: #111827;
 }
-
 
 /* =========================================================
    LOGOUT
@@ -237,6 +244,7 @@
 
   display: flex;
   align-items: center;
+
   gap: 12px;
 
   padding: 0 12px;
@@ -245,11 +253,13 @@
   border-radius: 8px;
 
   background: transparent;
+
   color: #fca5a5;
 
   cursor: pointer;
 
   font-family: inherit;
+
   font-size: 13px;
   font-weight: 500;
 
@@ -265,9 +275,8 @@
   color: #fecaca;
 }
 
-
 /* =========================================================
-   MOBILE CLOSE BUTTON
+   CLOSE BUTTON
 ========================================================= */
 
 .sidebar-close {
@@ -308,7 +317,6 @@
   transform: rotate(90deg);
 }
 
-
 /* =========================================================
    MOBILE OVERLAY
 ========================================================= */
@@ -327,20 +335,20 @@
   backdrop-filter: blur(2px);
 }
 
-
 /* =========================================================
    TABLET / MOBILE
 ========================================================= */
 
 @media (max-width: 900px) {
-
   .sidebar {
     width: 280px;
+
     max-width: 85vw;
 
     transform: translateX(-100%);
 
-    box-shadow: 8px 0 30px rgba(0, 0, 0, 0.25);
+    box-shadow:
+      8px 0 30px rgba(0, 0, 0, 0.25);
   }
 
   .sidebar.sidebar-open {
@@ -360,15 +368,14 @@
   }
 }
 
-
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
-
   .sidebar {
     width: 270px;
+
     max-width: 88vw;
   }
 
@@ -412,13 +419,11 @@
   }
 }
 
-
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 400px) {
-
   .sidebar {
     width: 260px;
   }
@@ -439,13 +444,11 @@
   }
 }
 
-
 /* =========================================================
    REDUCED MOTION
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
   .sidebar,
   .sidebar-link,
   .sidebar-close,

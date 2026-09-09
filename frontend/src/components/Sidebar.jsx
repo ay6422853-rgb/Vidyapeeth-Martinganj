@@ -4,24 +4,96 @@ import "./Sidebar.css";
 
 const menuConfig = {
   PRINCIPAL: [
-    { label: "Dashboard", icon: "▦", path: "/principal" },
-    { label: "Students", icon: "🎓", path: "/principal/students" },
-    { label: "Registration", icon: "📝", path: "/principal/registration" },
-    { label: "Admission", icon: "📋", path: "/principal/admission" },
-    { label: "Teachers", icon: "👨‍🏫", path: "/principal/teachers" },
-    { label: "Classes", icon: "🏫", path: "/principal/classes" },
-    { label: "Subjects", icon: "📚", path: "/principal/subjects" },
-    { label: "Users", icon: "👥", path: "/principal/users" },
-    { label: "Payments", icon: "💰", path: "/principal/payments" },
-    { label: "Expenses", icon: "💸", path: "/principal/expenses" },
-    { label: "Fee Structure", icon: "🧾", path: "/principal/fees" },
-    { label: "Attendance", icon: "✓", path: "/principal/attendance" },
-    { label: "Exams", icon: "📝", path: "/principal/exams" },
-    { label: "Marks", icon: "📊", path: "/principal/marks" },
-    { label: "Homework", icon: "📖", path: "/principal/homework" },
-    { label: "Notices", icon: "📢", path: "/principal/notices" },
-    { label: "Events", icon: "📅", path: "/principal/events" },
-    { label: "Reports", icon: "📈", path: "/principal/reports" },
+    {
+      label: "Dashboard",
+      icon: "▦",
+      path: "/principal",
+    },
+    {
+      label: "Students",
+      icon: "🎓",
+      path: "/principal/students",
+    },
+    {
+      label: "Registration",
+      icon: "📝",
+      path: "/principal/registration",
+    },
+    {
+      label: "Admission",
+      icon: "📋",
+      path: "/principal/admission",
+    },
+    {
+      label: "Teachers",
+      icon: "👨‍🏫",
+      path: "/principal/teachers",
+    },
+    {
+      label: "Classes",
+      icon: "🏫",
+      path: "/principal/classes",
+    },
+    {
+      label: "Subjects",
+      icon: "📚",
+      path: "/principal/subjects",
+    },
+    {
+      label: "Users",
+      icon: "👥",
+      path: "/principal/users",
+    },
+    {
+      label: "Payments",
+      icon: "💰",
+      path: "/principal/payments",
+    },
+    {
+      label: "Expenses",
+      icon: "💸",
+      path: "/principal/expenses",
+    },
+    {
+      label: "Fee Structure",
+      icon: "🧾",
+      path: "/principal/fees",
+    },
+    {
+      label: "Attendance",
+      icon: "✓",
+      path: "/principal/attendance",
+    },
+    {
+      label: "Exams",
+      icon: "📝",
+      path: "/principal/exams",
+    },
+    {
+      label: "Marks",
+      icon: "📊",
+      path: "/principal/marks",
+    },
+    {
+      label: "Homework",
+      icon: "📖",
+      path: "/principal/homework",
+    },
+    {
+      label: "Notices",
+      icon: "📢",
+      path: "/principal/notices",
+    },
+    {
+      label: "Events",
+      icon: "📅",
+      path: "/principal/events",
+    },
+    {
+      label: "Reports",
+      icon: "📈",
+      path: "/principal/reports",
+    },
   ],
 };
 
@@ -46,9 +118,7 @@ export default function Sidebar({
 
   return (
     <>
-      {/* =====================================
-          MOBILE OVERLAY
-      ===================================== */}
+      {/* MOBILE OVERLAY */}
 
       {mobileOpen && (
         <div
@@ -57,9 +127,7 @@ export default function Sidebar({
         />
       )}
 
-      {/* =====================================
-          SIDEBAR
-      ===================================== */}
+      {/* SIDEBAR */}
 
       <aside
         className={`sidebar ${
@@ -67,9 +135,7 @@ export default function Sidebar({
         }`}
       >
 
-        {/* ===================================
-            MOBILE CLOSE BUTTON
-        =================================== */}
+        {/* CLOSE BUTTON */}
 
         <button
           type="button"
@@ -80,9 +146,7 @@ export default function Sidebar({
           ×
         </button>
 
-        {/* ===================================
-            BRAND
-        =================================== */}
+        {/* BRAND */}
 
         <div className="sidebar-brand">
 
@@ -100,9 +164,7 @@ export default function Sidebar({
 
         </div>
 
-        {/* ===================================
-            ROLE
-        =================================== */}
+        {/* ROLE */}
 
         <div className="sidebar-role">
 
@@ -112,9 +174,7 @@ export default function Sidebar({
 
         </div>
 
-        {/* ===================================
-            NAVIGATION
-        =================================== */}
+        {/* NAVIGATION */}
 
         <nav className="sidebar-nav">
 
@@ -130,7 +190,6 @@ export default function Sidebar({
                 }`
               }
             >
-
               <span className="sidebar-icon">
                 {item.icon}
               </span>
@@ -138,15 +197,12 @@ export default function Sidebar({
               <span>
                 {item.label}
               </span>
-
             </NavLink>
           ))}
 
         </nav>
 
-        {/* ===================================
-            BOTTOM
-        =================================== */}
+        {/* BOTTOM */}
 
         <div className="sidebar-bottom">
 
@@ -155,7 +211,6 @@ export default function Sidebar({
             onClick={closeMobile}
             className="sidebar-link"
           >
-
             <span className="sidebar-icon">
               👤
             </span>
@@ -163,7 +218,6 @@ export default function Sidebar({
             <span>
               Profile
             </span>
-
           </NavLink>
 
           <button
@@ -171,7 +225,6 @@ export default function Sidebar({
             className="sidebar-logout"
             onClick={handleLogout}
           >
-
             <span className="sidebar-icon">
               ↪
             </span>
@@ -179,7 +232,6 @@ export default function Sidebar({
             <span>
               Logout
             </span>
-
           </button>
 
         </div>

@@ -4,10 +4,11 @@
 
 .app-layout {
   min-height: 100vh;
+
   width: 100%;
+
   background: #f5f7fb;
 }
-
 
 /* =========================================================
    MAIN AREA
@@ -15,12 +16,16 @@
 
 .main-area {
   min-height: 100vh;
+
   margin-left: 260px;
+
   width: calc(100% - 260px);
+
   display: flex;
   flex-direction: column;
-}
 
+  box-sizing: border-box;
+}
 
 /* =========================================================
    PAGE CONTENT
@@ -28,32 +33,22 @@
 
 .page-content {
   flex: 1;
+
   width: 100%;
+
   padding: 24px;
+
   box-sizing: border-box;
 }
-
-
-/* =========================================================
-   DESKTOP
-========================================================= */
-
-@media (min-width: 901px) {
-  .main-area {
-    margin-left: 260px;
-    width: calc(100% - 260px);
-  }
-}
-
 
 /* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
-
   .main-area {
     margin-left: 0;
+
     width: 100%;
   }
 
@@ -62,25 +57,21 @@
   }
 }
 
-
 /* =========================================================
    MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
-
   .page-content {
     padding: 15px;
   }
 }
-
 
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 400px) {
-
   .page-content {
     padding: 12px;
   }

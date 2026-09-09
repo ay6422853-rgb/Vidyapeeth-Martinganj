@@ -3,7 +3,9 @@ import { useAuth } from "../context/AuthContext";
 import "./Header.css";
 
 function getPageTitle(pathname) {
-  if (pathname === "/principal") return "Dashboard";
+  if (pathname === "/principal") {
+    return "Dashboard";
+  }
 
   const last = pathname
     .split("/")
@@ -44,11 +46,11 @@ export default function Header({ onMenuClick }) {
   return (
     <header className="app-header">
 
-      {/* LEFT */}
-
       <div className="header-left">
 
+        {/* MOBILE MENU */}
         <button
+          type="button"
           className="menu-button"
           onClick={onMenuClick}
           aria-label="Open menu"
@@ -56,18 +58,20 @@ export default function Header({ onMenuClick }) {
           ☰
         </button>
 
-        <div>
+        <div className="header-title">
           <h1>{title}</h1>
           <p>School Management System</p>
         </div>
 
       </div>
 
-      {/* RIGHT */}
-
       <div className="header-right">
 
-        <button className="notification-button">
+        <button
+          type="button"
+          className="notification-button"
+          aria-label="Notifications"
+        >
           🔔
           <span />
         </button>
@@ -75,9 +79,7 @@ export default function Header({ onMenuClick }) {
         <div className="header-user">
 
           <div className="header-avatar">
-            {user?.name
-              ?.charAt(0)
-              ?.toUpperCase() || "U"}
+            {user?.name?.charAt(0)?.toUpperCase() || "U"}
           </div>
 
           <div className="header-user-info">

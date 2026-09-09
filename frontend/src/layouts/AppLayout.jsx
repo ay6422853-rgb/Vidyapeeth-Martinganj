@@ -9,20 +9,16 @@ import "./AppLayout.css";
 export default function AppLayout({ children }) {
   const location = useLocation();
 
-  // Mobile sidebar state
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // Open sidebar
   const openSidebar = () => {
     setSidebarOpen(true);
   };
 
-  // Close sidebar
   const closeSidebar = () => {
     setSidebarOpen(false);
   };
 
-  // Route change hone par mobile sidebar automatically close
   useEffect(() => {
     setSidebarOpen(false);
   }, [location.pathname]);
@@ -30,32 +26,16 @@ export default function AppLayout({ children }) {
   return (
     <div className="app-layout">
 
-      {/* =========================
-          SIDEBAR
-      ========================== */}
-
       <Sidebar
         mobileOpen={sidebarOpen}
         closeMobile={closeSidebar}
       />
 
-      {/* =========================
-          MAIN AREA
-      ========================== */}
-
       <div className="main-area">
-
-        {/* =========================
-            HEADER
-        ========================== */}
 
         <Header
           onMenuClick={openSidebar}
         />
-
-        {/* =========================
-            PAGE CONTENT
-        ========================== */}
 
         <main className="page-content">
           {children || <Outlet />}
