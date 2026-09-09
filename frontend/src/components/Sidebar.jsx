@@ -32,12 +32,9 @@ export default function Sidebar({
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
-  const role = String(
-    user?.role || ""
-  ).toUpperCase();
+  const role = String(user?.role || "").toUpperCase();
 
-  const menuItems =
-    menuConfig[role] || [];
+  const menuItems = menuConfig[role] || [];
 
   const handleLogout = () => {
     closeMobile?.();
@@ -49,35 +46,6 @@ export default function Sidebar({
 
   return (
     <>
-      {/* =====================================
-          MOBILE HAMBURGER BUTTON
-      ===================================== */}
-
-      <button
-        type="button"
-        className="mobile-menu-btn"
-        onClick={() => {
-          /*
-            Parent component me mobileOpen
-            toggle hona chahiye.
-
-            Agar Sidebar ko sirf closeMobile
-            prop mil raha hai, to hamburger
-            ke liye parent se openMobile prop
-            dena better hai.
-          */
-
-          if (typeof closeMobile === "function") {
-            closeMobile("toggle");
-          }
-        }}
-        aria-label="Open menu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
       {/* =====================================
           MOBILE OVERLAY
       ===================================== */}
@@ -95,14 +63,12 @@ export default function Sidebar({
 
       <aside
         className={`sidebar ${
-          mobileOpen
-            ? "sidebar-open"
-            : ""
+          mobileOpen ? "sidebar-open" : ""
         }`}
       >
 
         {/* ===================================
-            CLOSE BUTTON - MOBILE
+            MOBILE CLOSE BUTTON
         =================================== */}
 
         <button
@@ -156,16 +122,11 @@ export default function Sidebar({
             <NavLink
               key={item.path}
               to={item.path}
-              end={
-                item.path ===
-                "/principal"
-              }
+              end={item.path === "/principal"}
               onClick={closeMobile}
               className={({ isActive }) =>
                 `sidebar-link ${
-                  isActive
-                    ? "active"
-                    : ""
+                  isActive ? "active" : ""
                 }`
               }
             >
