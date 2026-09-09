@@ -11,7 +11,7 @@ export default function Home() {
           <span className="logo-icon">🏫</span>
 
           <div>
-            <strong>EduSphere School</strong>
+            <strong>Vidyapeeth Coaching And Foundation</strong>
             <small>Learn • Grow • Lead</small>
           </div>
         </div>
@@ -35,7 +35,7 @@ export default function Home() {
 
         <div className="hero-content">
 
-            <h1>New Modern Tilakdhari<br/> Inter College</h1>
+            <h1>Vidyapeeth Coaching And Foundation<br/>Martinganj Azamgarh</h1>
 
           <span className="welcome-text">
             WELCOME TO OUR SCHOOL
