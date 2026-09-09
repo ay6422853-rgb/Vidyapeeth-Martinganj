@@ -1,8 +1,13 @@
+
 /* =========================================================
-   HEADER
+   MODERN APP HEADER
 ========================================================= */
 
 .app-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
   height: 72px;
   width: 100%;
 
@@ -10,17 +15,13 @@
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 24px;
-  box-sizing: border-box;
+  padding: 0 26px;
 
   background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e8ebf0;
 
-  border-bottom: 1px solid #e5e7eb;
-
-  position: sticky;
-  top: 0;
-
-  z-index: 900;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 
@@ -32,7 +33,6 @@
   display: flex;
   align-items: center;
   gap: 14px;
-
   min-width: 0;
 }
 
@@ -42,24 +42,25 @@
 ========================================================= */
 
 .menu-button {
-  display: none;
+  width: 40px;
+  height: 40px;
 
-  width: 42px;
-  height: 42px;
-
+  display: flex;
   align-items: center;
   justify-content: center;
 
-  border: 1px solid #e5e7eb;
+  padding: 0;
+
+  border: 1px solid #e5e8ee;
   border-radius: 10px;
 
   background: #ffffff;
-  color: #111827;
+  color: #384256;
+
+  font-size: 19px;
+  line-height: 1;
 
   cursor: pointer;
-
-  font-size: 22px;
-  line-height: 1;
 
   transition:
     background 0.2s ease,
@@ -68,8 +69,8 @@
 }
 
 .menu-button:hover {
-  background: #f3f4f6;
-  border-color: #d1d5db;
+  background: #f5f7fa;
+  border-color: #d9dee7;
 }
 
 .menu-button:active {
@@ -78,26 +79,29 @@
 
 
 /* =========================================================
-   HEADER TITLE
+   PAGE TITLE
 ========================================================= */
 
 .header-left h1 {
   margin: 0;
 
-  color: #111827;
+  color: #1d2638;
 
-  font-size: 21px;
-  font-weight: 700;
-
+  font-size: 19px;
   line-height: 1.2;
+  font-weight: 750;
+
+  letter-spacing: -0.3px;
 }
 
 .header-left p {
   margin: 4px 0 0;
 
-  color: #6b7280;
+  color: #8a93a3;
 
-  font-size: 12px;
+  font-size: 11px;
+  line-height: 1.2;
+  font-weight: 500;
 }
 
 
@@ -108,7 +112,7 @@
 .header-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
 }
 
 
@@ -126,19 +130,35 @@
   align-items: center;
   justify-content: center;
 
-  border: 0;
+  padding: 0;
+
+  border: 1px solid #e5e8ee;
   border-radius: 10px;
 
-  background: transparent;
+  background: #ffffff;
+  color: #465168;
+
+  font-size: 16px;
 
   cursor: pointer;
 
-  font-size: 19px;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .notification-button:hover {
-  background: #f3f4f6;
+  background: #f5f7fa;
+  border-color: #d9dee7;
 }
+
+.notification-button:active {
+  transform: scale(0.95);
+}
+
+
+/* Notification dot */
 
 .notification-button span {
   position: absolute;
@@ -146,26 +166,35 @@
   top: 8px;
   right: 8px;
 
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
 
   border-radius: 50%;
 
-  background: #ef4444;
+  background: #596579;
 
-  border: 2px solid #ffffff;
+  border: 1.5px solid #ffffff;
 }
 
 
 /* =========================================================
-   USER
+   USER AREA
 ========================================================= */
 
 .header-user {
   display: flex;
   align-items: center;
   gap: 10px;
+
+  padding-left: 17px;
+
+  border-left: 1px solid #e7eaf0;
 }
+
+
+/* =========================================================
+   AVATAR
+========================================================= */
 
 .header-avatar {
   width: 38px;
@@ -175,51 +204,110 @@
   align-items: center;
   justify-content: center;
 
-  border-radius: 50%;
+  flex-shrink: 0;
 
-  background: #2563eb;
-  color: #ffffff;
+  border-radius: 11px;
+
+  background: #eef1f5;
+  color: #303b50;
 
   font-size: 14px;
-  font-weight: 700;
-}
-
-.header-user-info strong {
-  display: block;
-
-  color: #111827;
-
-  font-size: 13px;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 
 /* =========================================================
-   TABLET + MOBILE
+   USER INFORMATION
 ========================================================= */
 
-@media (max-width: 900px) {
+.header-user-info {
+  display: flex;
+  flex-direction: column;
 
+  min-width: 90px;
+}
+
+.header-user-info strong {
+  overflow: hidden;
+
+  color: #293348;
+
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 700;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.header-user-info small {
+  margin-top: 2px;
+
+  color: #8790a0;
+
+  font-size: 10px;
+  line-height: 1.3;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   FOCUS ACCESSIBILITY
+========================================================= */
+
+.menu-button:focus-visible,
+.notification-button:focus-visible {
+  outline: 2px solid #8d98aa;
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
   .app-header {
-    height: 68px;
-
+    height: 66px;
     padding: 0 18px;
   }
 
-  /* IMPORTANT:
-     Hamburger sirf mobile/tablet par dikhega
-  */
+  .header-left {
+    gap: 11px;
+  }
 
-  .menu-button {
-    display: flex;
+  .menu-button,
+  .notification-button {
+    width: 38px;
+    height: 38px;
   }
 
   .header-left h1 {
-    font-size: 19px;
+    font-size: 17px;
   }
 
   .header-left p {
-    font-size: 11px;
+    font-size: 10px;
+  }
+
+  .header-right {
+    gap: 11px;
+  }
+
+  .header-user {
+    padding-left: 11px;
+  }
+
+  .header-user-info {
+    display: none;
+  }
+
+  .header-avatar {
+    width: 38px;
+    height: 38px;
   }
 }
 
@@ -228,27 +316,32 @@
    MOBILE
 ========================================================= */
 
-@media (max-width: 600px) {
-
+@media (max-width: 480px) {
   .app-header {
-    height: 64px;
+    height: 62px;
+    padding: 0 13px;
+  }
 
-    padding: 0 14px;
+  .menu-button,
+  .notification-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
   }
 
   .header-left {
-    gap: 10px;
-  }
-
-  .menu-button {
-    width: 40px;
-    height: 40px;
-
-    font-size: 21px;
+    gap: 9px;
   }
 
   .header-left h1 {
-    font-size: 17px;
+    max-width: 155px;
+
+    overflow: hidden;
+
+    font-size: 15px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .header-left p {
@@ -256,41 +349,38 @@
   }
 
   .header-right {
-    gap: 6px;
+    gap: 8px;
   }
 
-  .notification-button {
-    width: 36px;
-    height: 36px;
+  .header-user {
+    padding-left: 8px;
   }
 
   .header-avatar {
-    width: 34px;
-    height: 34px;
-  }
+    width: 35px;
+    height: 35px;
 
-  .header-user-info {
-    display: none;
+    border-radius: 9px;
+
+    font-size: 13px;
   }
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   VERY SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 400px) {
-
+@media (max-width: 350px) {
   .app-header {
     padding: 0 10px;
   }
 
-  .menu-button {
-    width: 38px;
-    height: 38px;
+  .notification-button {
+    display: none;
   }
 
   .header-left h1 {
-    font-size: 16px;
+    max-width: 135px;
   }
 }
