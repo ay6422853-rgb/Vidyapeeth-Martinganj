@@ -1,339 +1,43 @@
 /* =========================================================
-   STUDENT REGISTRATION PAGE
-   Modern School Management UI
+   SIDEBAR
 ========================================================= */
 
-.registration-page {
-  width: 100%;
-  max-width: 1250px;
-  margin: 0 auto;
-  padding: 30px;
-  box-sizing: border-box;
-  color: #172033;
-}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  z-index: 1000;
 
-/* =========================================================
-   HEADER
-========================================================= */
-
-.registration-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 25px;
-}
-
-.registration-header h1 {
-  margin: 0;
-  font-size: 30px;
-  font-weight: 750;
-  letter-spacing: -0.6px;
-  color: #172033;
-}
-
-.registration-header p {
-  margin: 7px 0 0;
-  color: #718096;
-  font-size: 14px;
-}
-
-/* =========================================================
-   ALERT
-========================================================= */
-
-.registration-alert {
-  padding: 14px 18px;
-  border-radius: 12px;
-  margin-bottom: 22px;
-  font-size: 14px;
-  font-weight: 600;
-  border: 1px solid transparent;
-}
-
-.registration-alert.error {
-  background: #fff5f5;
-  color: #c53030;
-  border-color: #fed7d7;
-}
-
-/* =========================================================
-   FORM CONTAINER
-========================================================= */
-
-.registration-form {
   display: flex;
   flex-direction: column;
-  gap: 22px;
-}
 
-/* =========================================================
-   FORM SECTION
-========================================================= */
-
-.form-section {
-  background: #ffffff;
-  border: 1px solid #e7ebf2;
-  border-radius: 18px;
-  padding: 26px;
-  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.04);
-}
-
-.section-heading {
-  margin-bottom: 24px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #edf0f5;
-}
-
-.section-heading h2 {
-  margin: 0;
-  font-size: 19px;
-  font-weight: 700;
-  color: #1e293b;
-}
-
-.section-heading p {
-  margin: 6px 0 0;
-  font-size: 13px;
-  color: #7b8798;
-}
-
-/* =========================================================
-   FORM GRID
-========================================================= */
-
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-
-.form-group.full {
-  grid-column: 1 / -1;
-}
-
-/* =========================================================
-   LABEL
-========================================================= */
-
-.form-group label {
-  margin-bottom: 8px;
-  font-size: 13px;
-  font-weight: 650;
-  color: #334155;
-}
-
-.form-group label span {
-  color: #e53e3e;
-  margin-left: 4px;
-}
-
-/* =========================================================
-   INPUT / SELECT / TEXTAREA
-========================================================= */
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  box-sizing: border-box;
-
-  border: 1px solid #dfe5ee;
-  background: #fbfcfe;
-  color: #1e293b;
-
-  border-radius: 11px;
-  padding: 12px 14px;
-
-  font-size: 14px;
-  font-family: inherit;
-
-  outline: none;
-
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
-}
-
-.form-group input {
-  height: 45px;
-}
-
-.form-group select {
-  height: 45px;
-  cursor: pointer;
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 90px;
-  line-height: 1.5;
-}
-
-/* =========================================================
-   PLACEHOLDER
-========================================================= */
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: #a0aec0;
-}
-
-/* =========================================================
-   FOCUS
-========================================================= */
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: #4f46e5;
-  background: #ffffff;
-
-  box-shadow:
-    0 0 0 3px rgba(79, 70, 229, 0.1);
-}
-
-/* =========================================================
-   DISABLED
-========================================================= */
-
-.form-group input:disabled,
-.form-group select:disabled,
-.form-group textarea:disabled {
-  cursor: not-allowed;
-  opacity: 0.65;
-  background: #f1f5f9;
-}
-
-/* =========================================================
-   FIELD ERROR
-========================================================= */
-
-.field-error {
-  margin-top: 7px;
-  color: #c53030;
-  font-size: 12px;
-  line-height: 1.4;
-}
-
-/* =========================================================
-   FORM ACTIONS
-========================================================= */
-
-.form-actions {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-
-  gap: 12px;
-
-  padding: 4px 0 10px;
-}
-
-/* =========================================================
-   BUTTONS
-========================================================= */
-
-.primary-btn,
-.secondary-btn {
-  height: 46px;
-
-  padding: 0 22px;
-
-  border-radius: 11px;
-  border: none;
-
-  font-size: 14px;
-  font-weight: 650;
-  font-family: inherit;
-
-  cursor: pointer;
-
-  transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease,
-    background 0.18s ease,
-    opacity 0.18s ease;
-}
-
-.primary-btn {
-  background: #4f46e5;
+  background: #111827;
   color: #ffffff;
 
-  box-shadow:
-    0 5px 14px rgba(79, 70, 229, 0.2);
+  border-right: 1px solid #1f2937;
+
+  transition: transform 0.28s ease;
 }
 
-.primary-btn:hover:not(:disabled) {
-  transform: translateY(-1px);
-
-  background: #4338ca;
-
-  box-shadow:
-    0 8px 18px rgba(79, 70, 229, 0.25);
-}
-
-.secondary-btn {
-  background: #f1f5f9;
-  color: #475569;
-
-  border: 1px solid #e2e8f0;
-}
-
-.secondary-btn:hover:not(:disabled) {
-  background: #e8edf3;
-  transform: translateY(-1px);
-}
-
-.primary-btn:disabled,
-.secondary-btn:disabled {
-  cursor: not-allowed;
-  opacity: 0.55;
-
-  transform: none;
-  box-shadow: none;
-}
 
 /* =========================================================
-   SUCCESS CARD
+   BRAND
 ========================================================= */
 
-.registration-success {
-  margin-bottom: 22px;
+.sidebar-brand {
+  min-height: 76px;
+  padding: 0 20px;
 
-  background: #ffffff;
-
-  border: 1px solid #c6f6d5;
-  border-radius: 18px;
-
-  padding: 25px;
-
-  box-shadow:
-    0 6px 22px rgba(15, 23, 42, 0.05);
-}
-
-/* =========================================================
-   SUCCESS TITLE
-========================================================= */
-
-.success-title {
   display: flex;
   align-items: center;
+  gap: 12px;
 
-  gap: 14px;
-
-  padding-bottom: 20px;
-
-  border-bottom: 1px solid #e8f5ec;
+  border-bottom: 1px solid #1f2937;
 }
 
-.success-title > span {
+.brand-logo {
   width: 42px;
   height: 42px;
 
@@ -343,281 +47,409 @@
   align-items: center;
   justify-content: center;
 
-  border-radius: 50%;
+  border-radius: 12px;
 
-  background: #dcfce7;
-  color: #16a34a;
+  background: #2563eb;
+  color: #ffffff;
 
-  font-size: 21px;
+  font-size: 20px;
   font-weight: 800;
 }
 
-.success-title h2 {
+.brand-text {
+  min-width: 0;
+}
+
+.brand-text h2 {
   margin: 0;
 
-  font-size: 19px;
+  color: #ffffff;
 
-  color: #166534;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-.success-title p {
-  margin: 5px 0 0;
+.brand-text span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #9ca3af;
+
+  font-size: 10px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   ROLE
+========================================================= */
+
+.sidebar-role {
+  margin: 18px 16px 10px;
+  padding: 9px 12px;
+
+  display: flex;
+  align-items: center;
+
+  border-radius: 8px;
+
+  background: #1f2937;
+  color: #d1d5db;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+.role-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  margin-right: 7px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.sidebar-nav {
+  flex: 1;
+
+  overflow-y: auto;
+
+  padding: 6px 12px 12px;
+
+  scrollbar-width: thin;
+  scrollbar-color: #374151 transparent;
+}
+
+
+/* Chrome / Edge scrollbar */
+
+.sidebar-nav::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   SIDEBAR LINKS
+========================================================= */
+
+.sidebar-link {
+  min-height: 43px;
+
+  margin-bottom: 3px;
+  padding: 0 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border-radius: 8px;
+
+  color: #cbd5e1;
+  text-decoration: none;
 
   font-size: 13px;
+  font-weight: 500;
 
-  color: #6b7280;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
+.sidebar-link:hover {
+  background: #1f2937;
+  color: #ffffff;
+
+  transform: translateX(2px);
+}
+
+.sidebar-link.active {
+  background: #2563eb;
+  color: #ffffff;
+
+  font-weight: 600;
+
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.18);
+}
+
+
 /* =========================================================
-   SUCCESS GRID
+   ICON
 ========================================================= */
 
-.success-grid {
-  display: grid;
+.sidebar-icon {
+  width: 22px;
 
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+  flex-shrink: 0;
 
-  gap: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  margin-top: 20px;
+  text-align: center;
+
+  font-size: 16px;
+  line-height: 1;
 }
 
-.success-item {
-  background: #f8fafc;
-
-  border: 1px solid #edf1f5;
-
-  border-radius: 12px;
-
-  padding: 14px;
-}
-
-.success-item span {
-  display: block;
-
-  margin-bottom: 6px;
-
-  font-size: 11px;
-
-  text-transform: uppercase;
-
-  letter-spacing: 0.5px;
-
-  color: #8792a2;
-
-  font-weight: 700;
-}
-
-.success-item strong {
-  display: block;
-
-  color: #1e293b;
-
-  font-size: 14px;
-
-  word-break: break-word;
-}
 
 /* =========================================================
-   LOGIN DETAILS
+   SIDEBAR BOTTOM
 ========================================================= */
 
-.login-details {
-  margin-top: 20px;
+.sidebar-bottom {
+  padding: 12px;
 
-  padding: 18px;
+  border-top: 1px solid #1f2937;
 
-  border-radius: 13px;
-
-  background: #f8faff;
-
-  border: 1px solid #dbe4ff;
+  background: #111827;
 }
 
-.login-details h3 {
-  margin: 0 0 14px;
-
-  font-size: 15px;
-
-  color: #3730a3;
-}
-
-.login-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 14px;
-}
-
-.login-grid > div {
-  background: #ffffff;
-
-  border: 1px solid #e5e9f2;
-
-  border-radius: 10px;
-
-  padding: 12px 14px;
-}
-
-.login-grid span {
-  display: block;
-
-  margin-bottom: 5px;
-
-  font-size: 11px;
-
-  text-transform: uppercase;
-
-  letter-spacing: 0.4px;
-
-  color: #8a94a6;
-
-  font-weight: 700;
-}
-
-.login-grid strong {
-  font-size: 14px;
-
-  color: #1e293b;
-
-  word-break: break-word;
-}
 
 /* =========================================================
-   SELECT
+   LOGOUT
 ========================================================= */
 
-.form-group select {
-  appearance: auto;
+.sidebar-logout {
+  width: 100%;
+  min-height: 43px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0 12px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #fca5a5;
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  text-align: left;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
+.sidebar-logout:hover {
+  background: #3f1d1d;
+  color: #fecaca;
+}
+
+
 /* =========================================================
-   DATE
+   MOBILE CLOSE BUTTON
 ========================================================= */
 
-.form-group input[type="date"] {
-  color: #334155;
+.sidebar-close {
+  display: none;
+
+  position: absolute;
+
+  top: 18px;
+  right: 16px;
+
+  width: 34px;
+  height: 34px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: #1f2937;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 25px;
+  line-height: 1;
+
+  z-index: 20;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
+.sidebar-close:hover {
+  background: #374151;
+
+  transform: rotate(90deg);
+}
+
+
 /* =========================================================
-   NUMBER
+   MOBILE OVERLAY
 ========================================================= */
 
-.form-group input[type="number"] {
-  appearance: textfield;
+.sidebar-overlay {
+  display: none;
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 999;
+
+  background: rgba(0, 0, 0, 0.48);
+
+  backdrop-filter: blur(2px);
 }
 
-.form-group input[type="number"]::-webkit-inner-spin-button,
-.form-group input[type="number"]::-webkit-outer-spin-button {
-  opacity: 1;
-}
 
 /* =========================================================
-   TABLET
+   TABLET / MOBILE
 ========================================================= */
 
 @media (max-width: 900px) {
 
-  .registration-page {
-    padding: 22px;
+  .sidebar {
+    width: 280px;
+    max-width: 85vw;
+
+    transform: translateX(-100%);
+
+    box-shadow: 8px 0 30px rgba(0, 0, 0, 0.25);
   }
 
-  .success-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    display: block;
+  }
+
+  .sidebar-close {
+    display: flex;
+  }
+
+  .sidebar-brand {
+    padding-right: 62px;
   }
 }
+
 
 /* =========================================================
    MOBILE
 ========================================================= */
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
-  .registration-page {
-    padding: 16px;
+  .sidebar {
+    width: 270px;
+    max-width: 88vw;
   }
 
-  .registration-header {
-    margin-bottom: 20px;
+  .sidebar-brand {
+    min-height: 70px;
+
+    padding-left: 16px;
+    padding-right: 55px;
   }
 
-  .registration-header h1 {
-    font-size: 24px;
+  .brand-logo {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 10px;
+
+    font-size: 18px;
   }
 
-  .registration-header p {
+  .brand-text h2 {
+    font-size: 17px;
+  }
+
+  .sidebar-role {
+    margin: 15px 14px 9px;
+  }
+
+  .sidebar-nav {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .sidebar-link {
+    min-height: 44px;
+
     font-size: 13px;
   }
 
-  .form-section {
-    padding: 20px 16px;
-
-    border-radius: 15px;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-    gap: 17px;
-  }
-
-  .form-group.full {
-    grid-column: auto;
-  }
-
-  .success-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .login-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .form-actions {
-    flex-direction: column-reverse;
-    align-items: stretch;
-  }
-
-  .primary-btn,
-  .secondary-btn {
-    width: 100%;
+  .sidebar-bottom {
+    padding: 10px;
   }
 }
+
 
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 420px) {
+@media (max-width: 400px) {
 
-  .registration-page {
-    padding: 12px;
+  .sidebar {
+    width: 260px;
   }
 
-  .registration-header h1 {
-    font-size: 21px;
+  .sidebar-link {
+    min-height: 42px;
+
+    gap: 10px;
+
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
-  .form-section {
-    padding: 17px 13px;
-  }
+  .sidebar-icon {
+    width: 20px;
 
-  .section-heading h2 {
-    font-size: 17px;
+    font-size: 15px;
   }
+}
 
-  .registration-success {
-    padding: 18px 14px;
-  }
 
-  .success-title {
-    align-items: flex-start;
-  }
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
 
-  .success-title h2 {
-    font-size: 16px;
+@media (prefers-reduced-motion: reduce) {
+
+  .sidebar,
+  .sidebar-link,
+  .sidebar-close,
+  .sidebar-logout {
+    transition: none;
   }
 }
