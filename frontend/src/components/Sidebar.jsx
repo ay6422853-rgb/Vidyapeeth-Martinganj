@@ -25,20 +25,63 @@ const menuConfig = {
   ],
 };
 
-export default function Sidebar({ mobileOpen, closeMobile }) {
+export default function Sidebar({
+  mobileOpen,
+  closeMobile,
+}) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
-  const role = String(user?.role || "").toUpperCase();
-  const menuItems = menuConfig[role] || [];
+  const role = String(
+    user?.role || ""
+  ).toUpperCase();
+
+  const menuItems =
+    menuConfig[role] || [];
 
   const handleLogout = () => {
+    closeMobile?.();
+
     logout();
+
     navigate("/login");
   };
 
   return (
     <>
+      {/* =====================================
+          MOBILE HAMBURGER BUTTON
+      ===================================== */}
+
+      <button
+        type="button"
+        className="mobile-menu-btn"
+        onClick={() => {
+          /*
+            Parent component me mobileOpen
+            toggle hona chahiye.
+
+            Agar Sidebar ko sirf closeMobile
+            prop mil raha hai, to hamburger
+            ke liye parent se openMobile prop
+            dena better hai.
+          */
+
+          if (typeof closeMobile === "function") {
+            closeMobile("toggle");
+          }
+        }}
+        aria-label="Open menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      {/* =====================================
+          MOBILE OVERLAY
+      ===================================== */}
+
       {mobileOpen && (
         <div
           className="sidebar-overlay"
@@ -46,56 +89,140 @@ export default function Sidebar({ mobileOpen, closeMobile }) {
         />
       )}
 
-      <aside className={`sidebar ${mobileOpen ? "sidebar-open" : ""}`}>
+      {/* =====================================
+          SIDEBAR
+      ===================================== */}
+
+      <aside
+        className={`sidebar ${
+          mobileOpen
+            ? "sidebar-open"
+            : ""
+        }`}
+      >
+
+        {/* ===================================
+            CLOSE BUTTON - MOBILE
+        =================================== */}
+
+        <button
+          type="button"
+          className="sidebar-close"
+          onClick={closeMobile}
+          aria-label="Close menu"
+        >
+          ×
+        </button>
+
+        {/* ===================================
+            BRAND
+        =================================== */}
+
         <div className="sidebar-brand">
-          <div className="brand-logo">S</div>
+
+          <div className="brand-logo">
+            S
+          </div>
 
           <div className="brand-text">
             <h2>SchoolERP</h2>
-            <span>Management System</span>
+
+            <span>
+              Management System
+            </span>
           </div>
+
         </div>
+
+        {/* ===================================
+            ROLE
+        =================================== */}
 
         <div className="sidebar-role">
+
           <span className="role-dot" />
+
           {role}
+
         </div>
 
+        {/* ===================================
+            NAVIGATION
+        =================================== */}
+
         <nav className="sidebar-nav">
+
           {menuItems.map((item) => (
             <NavLink
               key={item.path}
               to={item.path}
-              end={item.path === "/principal"}
+              end={
+                item.path ===
+                "/principal"
+              }
               onClick={closeMobile}
               className={({ isActive }) =>
-                `sidebar-link ${isActive ? "active" : ""}`
+                `sidebar-link ${
+                  isActive
+                    ? "active"
+                    : ""
+                }`
               }
             >
-              <span className="sidebar-icon">{item.icon}</span>
-              <span>{item.label}</span>
+
+              <span className="sidebar-icon">
+                {item.icon}
+              </span>
+
+              <span>
+                {item.label}
+              </span>
+
             </NavLink>
           ))}
+
         </nav>
 
+        {/* ===================================
+            BOTTOM
+        =================================== */}
+
         <div className="sidebar-bottom">
+
           <NavLink
             to={`/${role.toLowerCase()}/profile`}
             onClick={closeMobile}
             className="sidebar-link"
           >
-            <span className="sidebar-icon">👤</span>
-            <span>Profile</span>
+
+            <span className="sidebar-icon">
+              👤
+            </span>
+
+            <span>
+              Profile
+            </span>
+
           </NavLink>
 
           <button
+            type="button"
             className="sidebar-logout"
             onClick={handleLogout}
           >
-            <span>↪</span>
-            <span>Logout</span>
+
+            <span className="sidebar-icon">
+              ↪
+            </span>
+
+            <span>
+              Logout
+            </span>
+
           </button>
+
         </div>
+
       </aside>
     </>
   );

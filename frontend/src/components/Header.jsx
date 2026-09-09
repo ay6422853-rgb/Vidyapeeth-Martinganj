@@ -43,7 +43,11 @@ export default function Header({ onMenuClick }) {
 
   return (
     <header className="app-header">
+
+      {/* LEFT */}
+
       <div className="header-left">
+
         <button
           className="menu-button"
           onClick={onMenuClick}
@@ -56,25 +60,36 @@ export default function Header({ onMenuClick }) {
           <h1>{title}</h1>
           <p>School Management System</p>
         </div>
+
       </div>
 
+      {/* RIGHT */}
+
       <div className="header-right">
+
         <button className="notification-button">
           🔔
           <span />
         </button>
 
         <div className="header-user">
+
           <div className="header-avatar">
-            {user?.name?.charAt(0)?.toUpperCase() || "U"}
+            {user?.name
+              ?.charAt(0)
+              ?.toUpperCase() || "U"}
           </div>
 
           <div className="header-user-info">
-            <strong>{user?.name || "User"}</strong>
-            <small>{user?.role || ""}</small>
+            <strong>
+              {user?.name || "User"}
+            </strong>
           </div>
+
         </div>
+
       </div>
+
     </header>
   );
 }
