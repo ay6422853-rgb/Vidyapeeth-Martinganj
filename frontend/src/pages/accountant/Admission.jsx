@@ -26,27 +26,43 @@ export default function Admission() {
   // LOAD CLASSES FROM DATABASE
   // =========================
   useEffect(() => {
-    const loadClasses = async () => {
-      try {
-        setLoadingClasses(true);
+  const loadClasses = async () => {
+    try {
+      setLoadingClasses(true);
+      setError("");
 
-        const data = await list("accountant/classes");
+      const data = await list("accountant/classes");
 
-        setClasses(Array.isArray(data) ? data : []);
-      } catch (err) {
-        console.error("Classes load error:", err);
+      console.log("ACCOUNTANT CLASSES RESPONSE:", data);
 
-        setError(
-          err?.response?.data?.message ||
-            "Classes load nahi ho paayi."
-        );
-      } finally {
-        setLoadingClasses(false);
-      }
-    };
+      const classList =
+        Array.isArray(data)
+          ? data
+          : Array.isArray(data?.classes)
+          ? data.classes
+          : Array.isArray(data?.data)
+          ? data.data
+          : Array.isArray(data?.results)
+          ? data.results
+          : [];
 
-    loadClasses();
-  }, []);
+      console.log("CLASSES FOR DROPDOWN:", classList);
+
+      setClasses(classList);
+    } catch (err) {
+      console.error("Classes load error:", err);
+
+      setError(
+        err?.response?.data?.message ||
+          "Classes load nahi ho paayi."
+      );
+    } finally {
+      setLoadingClasses(false);
+    }
+  };
+
+  loadClasses();
+}, []);
 
   // =========================
   // INPUT CHANGE
