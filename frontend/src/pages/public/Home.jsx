@@ -53,15 +53,15 @@ export default function Home() {
           </div>
 
           <h1>
-            Learning Today.
+            Vidyapeeth Coaching And Foundation
             <br />
-            <span>Leading Tomorrow.</span>
+            <span>Martinganj Martinganj</span>
           </h1>
 
           <p className="hero-location">
-            Vidyapeeth Coaching And Foundation
+            Learning Today
             <br />
-            <strong>Martinganj, Azamgarh</strong>
+            <strong>Leading Tomorrow</strong>
           </p>
 
           <p className="hero-description">
